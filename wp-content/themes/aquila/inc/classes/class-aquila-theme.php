@@ -6,7 +6,9 @@
  */
 
  namespace AQUILA_THEME\Inc;
- use AQUILA_THEME\Inc\Traits\Singleton;
+
+// use AQUILA_THEME\Inc\Assets;
+use AQUILA_THEME\Inc\Traits\Singleton;
 
  class AQUILA_THEME {
     use Singleton;
@@ -15,12 +17,19 @@
     {
         // wp_die('hello');
         // load class.
-        $this->set_hooks();
+        Assets::get_instance();
+        $this->setup_hooks();
+
     }
 
-    protected function set_hooks(){
-        // actions and filters
+    protected function setup_hooks(){
+        /**
+         * Actions hooks
+         */
+
+       
     }
+
+    
  }
 
-?>
