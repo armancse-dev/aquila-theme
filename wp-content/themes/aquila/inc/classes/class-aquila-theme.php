@@ -41,6 +41,10 @@ use AQUILA_THEME\Inc\Traits\Singleton;
             'flex-width'           => true,
             'unlink-homepage-logo' => true,
         ] );
+        add_theme_support( 'custom-background', [
+            'default-color' => '#ffffff',
+            'default-image' =>'',
+        ] );
     }
 
     
