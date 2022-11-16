@@ -32,6 +32,16 @@
         ]);
     }
 
+    public function get_menu_id( $location ){
+        //get all the location
+
+        $locations = get_nav_menu_locations();
+        
+        //get object id by location.
+        $menu_id = $locations[ $location ];
+        return ! empty ( $menu_id ) ? $menu_id : '';
+    }
+
    
  }
 
