@@ -12,7 +12,7 @@
 
     protected function __construct()
     {
-        // wp_die('hello');
+       
         // load class.
         $this->setup_hooks();
     }

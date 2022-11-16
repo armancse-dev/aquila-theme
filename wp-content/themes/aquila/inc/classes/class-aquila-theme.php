@@ -7,7 +7,6 @@
 
  namespace AQUILA_THEME\Inc;
 
-// use AQUILA_THEME\Inc\Assets;
 use AQUILA_THEME\Inc\Traits\Singleton;
 
  class AQUILA_THEME {
@@ -15,9 +14,11 @@ use AQUILA_THEME\Inc\Traits\Singleton;
     
     protected function __construct()
     {
-        // wp_die('hello');
+        
         // load class.
         Assets::get_instance();
+        Menus::get_instance();
+
         $this->setup_hooks();
 
     }
@@ -32,6 +33,7 @@ use AQUILA_THEME\Inc\Traits\Singleton;
     }
 
     public function setup_theme(){
+
         add_theme_support( 'title-tag' );
         add_theme_support( 'custom-logo', [
             'header-text'          => ['site-title',  'site-description'] ,
@@ -70,6 +72,7 @@ use AQUILA_THEME\Inc\Traits\Singleton;
         if( !isset ( $content_width ) ){
             $content_width = 1240;
         }
+        
     }
 
     
