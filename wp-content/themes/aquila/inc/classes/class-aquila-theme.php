@@ -27,7 +27,12 @@ use AQUILA_THEME\Inc\Traits\Singleton;
          * Actions hooks
          */
 
-       
+        add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
+  
+    }
+
+    public function setup_theme(){
+        add_theme_support( 'title-tag' );
     }
 
     
