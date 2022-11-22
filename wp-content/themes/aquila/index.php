@@ -24,12 +24,37 @@ get_header();
                 <?php
               }
             ?>
-            <?php
-              while( have_posts() ) : the_post();
-              the_title();
-              the_content();
-              endwhile;
-            ?>
+            <div class="row">
+              <?php
+              $index = 0;
+              $no_of_columns = 3;
+
+              //Case: index = 0;
+                //start the loop.
+                while( have_posts() ) : the_post();
+                  if( 0=== $index % $no_of_columns ){
+                    ?>
+                      <div class="col-lg-4 col-md-6 col-sm-12 ">
+                        
+                      
+                    <?php
+                  }
+
+                  ?>
+                    <h3><?php the_title(); ?></h3>
+                    <div><?php the_content(); ?></div>
+                  <?php
+                  $index++;
+                  //Index value = 1;
+
+                  if( 0 !== $index && 0=== $index % $no_of_columns ){
+                    ?>
+                      </div>
+                    <?php
+                  }
+                endwhile;
+              ?>
+            </div>
           </div>
 
         <?php
